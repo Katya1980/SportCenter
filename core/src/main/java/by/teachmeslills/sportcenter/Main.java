@@ -65,19 +65,19 @@ public class Main {
         // userById(userServise, 5L);
 
 
-//        CustomerService customerService = new CustomerService(new CustomerRepository());
-//
-//        Customer customer2 = new Customer();
-//        customer2.setId(null);
-//        customer2.setName("Петя");
-//        customer2.setSurname("Петькин");
-//        customer2.setAdress("Минск, Сурганова, 15");
-//        customer2.setStatus(UserStatus.ACTIV);
-//        customer2.setAmountSpent(BigDecimal.valueOf(120));
-//        customer2.setFirstDate(LocalDate.of(2024,2,1));
-//        customer2.setLastDate(LocalDate.of(2024,3,2));
-//        customer2.setBirthday(LocalDate.of(2000,2,11));
-//        customerService.add(customer2);
+        CustomerService customerService = new CustomerService(new CustomerRepository());
+
+        Customer customer3 = new Customer();
+        customer3.setId(null);
+        customer3.setName("Игорь");
+        customer3.setSurname("Козлов");
+        customer3.setAdress("Минск, Шаранговича, 3");
+        customer3.setStatus(UserStatus.ACTIV);
+        customer3.setAmountSpent(BigDecimal.valueOf(90));
+        customer3.setFirstDate(LocalDate.of(2023,11,10));
+        customer3.setLastDate(LocalDate.of(2024,1,30));
+        customer3.setBirthday(LocalDate.of(2002,6,17));
+        customerService.add(customer3);
 //
 //        WorkerService workerService = new WorkerService(new WorkerRepository());
 //        Worker worker2 = new Worker();
