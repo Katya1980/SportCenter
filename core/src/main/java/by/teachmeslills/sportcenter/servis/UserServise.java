@@ -42,8 +42,13 @@ public void updateStatus (Long id, UserStatus userStatus){
          repository.updateStatus(id, userStatus);
 }
 public void updateLocalDate(Long id, LocalDate localDate){
-         repository.updateLocalDate(id,localDate);
+
+        repository.updateLocalDate(id,localDate);
 }
+    public User findByUserName(String name) {
+
+        return repository.findByName(name);
+    }
 
 
 

@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Data
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 @Table(schema = "users_sch", name = "customer")
 public class Customer  extends User{
 
