@@ -44,6 +44,7 @@ public class HibernateJava {
         configuration.addAnnotatedClass(Room.class);
         configuration.addAnnotatedClass(Customer.class);
         configuration.addAnnotatedClass(Worker.class);
+        configuration.addAnnotatedClass(Visiting.class);
 
         //        Сюда надо добавить наши данные по подключению
         configuration.setProperties(properties);

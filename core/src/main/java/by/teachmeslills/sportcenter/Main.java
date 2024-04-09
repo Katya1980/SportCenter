@@ -28,12 +28,16 @@ public class Main {
 //        Services services2 = new Services(null,"Плавание", 120);
 //        Services services3 = new Services(null,"Футбол", 150);
 //        Services services4 = new Services(null,"Баскетбол", 90);
+      //  Services services5 = new Services(null, "Водное поло", 80);
+     //   Services services6 = new Services(null, "Мини футбол", 110);
 //        servicesService.add(services1);
 //        servicesService.add(services2);
 //        servicesService.add(services3);
 //        servicesService.add(services4);
+    //    servicesService.add(services5);
+      //  servicesService.add(services6);
 
-        servicesService.updateRoomInService(1L, 202l);
+       // servicesService.updateRoomInService(52L, 205l);
 
 
         UserServise userServise = new UserServise(new UserImplements());
@@ -61,7 +65,8 @@ public class Main {
 
         // userServise.updateLocalDate(3L, LocalDate.of(2024,04,01));
 
-        userServise.findByUserName("Саша");
+
+        //  userFindName(userServise,"Саша");
 
 //        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 //        String date = "16/08/1995";
@@ -71,7 +76,7 @@ public class Main {
         //     userById(userServise, 52L);
 
 
-//        CustomerService customerService = new CustomerService(new CustomerRepository());
+   //    CustomerService customerService = new CustomerService(new CustomerRepository());
 //
 //        Customer customer3 = new Customer();
 //        customer3.setId(null);
@@ -84,22 +89,43 @@ public class Main {
 //        customer3.setLastDate(LocalDate.of(2024,1,30));
 //        customer3.setBirthday(LocalDate.of(2002,6,17));
 //        customerService.add(customer3);
+
+
+
 //
-//        WorkerService workerService = new WorkerService(new WorkerRepository());
-//        Worker worker2 = new Worker();
-//        worker2.setId(null);
-//        worker2.setName("Саша");
-//        worker2.setSurname("Сашкин");
-//        worker2.setAdress("Минск, Чкалова, 45");
-//        worker2.setBirthday(LocalDate.of(1995,12,4));
-//        worker2.setPost("Электрик");
-//        worker2.setDateOfEmployment(LocalDate.of(2023,2,1));
-//        worker2.setSalary(2500);
+        WorkerService workerService = new WorkerService(new WorkerRepository());
+//        Worker worker4 = new Worker();
+//        worker4.setId(null);
+//        worker4.setName("Наталья");
+//        worker4.setSurname("Кукушкина");
+//        worker4.setAdress("Минск, Беды, 20");
+//        worker4.setBirthday(LocalDate.of(2001,8,20));
+//        worker4.setPost("Главный бухгатер");
+//        worker4.setDateOfEmployment(LocalDate.of(2022,1,20));
+//        worker4.setSalary(3000);
 //        worker2.setDismissal(LocalDate.of(2024,3,1));
-//        workerService.add(worker2);
+//        workerService.add(worker4);
+
+        VisitingService visitingService = new VisitingService(new VisitingRepository());
+//        Visiting visiting2 = new Visiting(null,LocalDate.of(2024,1,15), BigDecimal.valueOf(15));
+//        Visiting visiting3 = new Visiting(null,LocalDate.of(2024,1,16), BigDecimal.valueOf(20));
+//        Visiting visiting4 = new Visiting(null,LocalDate.of(2024,1,20), BigDecimal.valueOf(10));
+//        Visiting visiting5 = new Visiting(null,LocalDate.of(2024,1,21), BigDecimal.valueOf(5));
+//        Visiting visiting6 = new Visiting(null,LocalDate.of(2024,1,26), BigDecimal.valueOf(15));
+//        visitingService.add(visiting2);
+//        visitingService.add(visiting3);
+//        visitingService.add(visiting4);
+//        visitingService.add(visiting5);
+//        visitingService.add(visiting6);
+
+//        visitingService.updateVisiting(52L,1L);
+//        visitingService.updateVisiting(52L,2L);
+//        visitingService.updateVisiting(102L,3L);
+//        visitingService.updateVisiting(102L,4L);
+//        visitingService.updateVisiting(102L,5L);
 
 
-
+maxSalaryWorker(workerService,5000);
 
     }
 
@@ -108,6 +134,13 @@ public class Main {
         System.out.println(userServise.findById(id));
     }
 
+    public static void userFindName(UserServise userServise, String name) {
 
+        System.out.println(userServise.findByUserName(name));
+    }
+
+    public static void maxSalaryWorker(WorkerService workerService, int salary){
+        System.out.println(workerService.maxSalary(salary));
+    }
 
 }

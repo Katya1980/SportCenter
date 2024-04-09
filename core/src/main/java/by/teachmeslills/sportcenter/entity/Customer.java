@@ -1,13 +1,12 @@
 package by.teachmeslills.sportcenter.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
@@ -15,6 +14,12 @@ import java.time.LocalDate;
 //@AllArgsConstructor
 @Table(schema = "users_sch", name = "customer")
 public class Customer  extends User{
+
+
+    @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER, cascade = CascadeType.DETACH)
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    private List<Visiting> visitingList;
 
     @PrimaryKeyJoinColumn(name = "users_id")
     @Id
@@ -51,10 +56,12 @@ public class Customer  extends User{
     }
 
     public BigDecimal getAmountSpent() {
+
         return amountSpent;
     }
 
     public void setAmountSpent(BigDecimal amountSpent) {
+
         this.amountSpent = amountSpent;
     }
 

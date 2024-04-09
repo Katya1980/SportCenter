@@ -10,6 +10,7 @@
         <class>by.teachmeslills.sportcenter.entity.room</class>
         <class>by.teachmeslills.sportcenter.entity.customer</class>
         <class>by.teachmeslills.sportcenter.entity.worker</class>
+        <class>by.teachmeslills.sportcenter.visiting.worker</class>
 
 
         <!--         Набор свойств -->
