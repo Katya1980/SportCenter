@@ -5,4 +5,6 @@ import by.teachmeslills.sportcenter.entity.Customer;
 public interface CustomerInterface {
 
     void addCustomer(Customer customer);
+
+
 }

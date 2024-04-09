@@ -1,12 +1,15 @@
 package by.teachmeslills.sportcenter.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
+
+import java.util.List;
+
 
 @Data
 @Entity
 @Table(schema = "users_sch", name = "rooms")
-
+@NoArgsConstructor
 public class Room {
 
     @Id
@@ -18,6 +21,11 @@ public class Room {
     @Enumerated(EnumType.STRING)
     private RoomStatus status;
     private int costhour;
+
+    @OneToMany(mappedBy = "room", fetch = FetchType.EAGER, cascade = CascadeType.DETACH)
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    private List<Services> servicesList;
 
     public Room(Long id, String name, int maxPeople, RoomStatus status, int costhour) {
         this.id = id;

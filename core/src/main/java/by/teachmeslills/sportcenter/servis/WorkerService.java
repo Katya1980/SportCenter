@@ -1,8 +1,6 @@
 package by.teachmeslills.sportcenter.servis;
 
-import by.teachmeslills.sportcenter.entity.Customer;
 import by.teachmeslills.sportcenter.entity.Worker;
-import by.teachmeslills.sportcenter.repository.CustomerInterface;
 import by.teachmeslills.sportcenter.repository.WorkerInterface;
 
 public class WorkerService {
@@ -17,4 +15,10 @@ public class WorkerService {
 
         repository.addWorker(worker);
     }
+
+    public boolean maxSalary(int salary){
+         repository.maxSalaryWorker(salary);
+        return false;
+    }
+
 }

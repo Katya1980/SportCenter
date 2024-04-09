@@ -5,7 +5,6 @@ import by.teachmeslills.sportcenter.entity.UserStatus;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Vector;
 
 public interface UserRepository {
 
@@ -22,4 +21,8 @@ public interface UserRepository {
 
 
     void updateLocalDate(Long id, LocalDate localDate);
+
+    User findByName(String name);
 }
+
+

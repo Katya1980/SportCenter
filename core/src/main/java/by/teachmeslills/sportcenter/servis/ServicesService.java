@@ -18,8 +18,19 @@ public class ServicesService {
 
         repository.addServices(services);
     }
+
+    public void updateRoomInService(Long servicesId, Long RoomId) {
+
+         repository.updateRoomServices(servicesId, RoomId);
+    }
     public List<Services> getServices() {
 
         return  repository.getAll();
     }
+
+
+
+
+
+
 }

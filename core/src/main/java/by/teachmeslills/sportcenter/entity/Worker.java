@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Data
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 @Table(schema = "users_sch", name = "worker")
 
 public class Worker  extends User{

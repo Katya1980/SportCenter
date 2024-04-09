@@ -4,11 +4,10 @@ import by.teachmeslills.sportcenter.entity.User;
 import by.teachmeslills.sportcenter.entity.UserStatus;
 import by.teachmeslills.sportcenter.hibernate.HibernateConnection;
 import by.teachmeslills.sportcenter.hibernate.HibernateJava;
-import by.teachmeslills.sportcenter.servis.UserServise;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -34,17 +33,14 @@ public class UserImplements implements UserRepository {
     @Override
     public  User findById(Long id) {
         Session session = sessionFactory.openSession();
-        Query query = session.createQuery("select s from User s");
-        List<User> users = (List<User>) query.getResultList();
+//        Query query = session.createQuery("select s from User s");
+//        List<User> users = (List<User>) query.getResultList();
         session.getTransaction().begin();
         User user = session.load(User.class, id);
         session.find(User.class,id);
         session.getTransaction().commit();
         session.close();
         return user;
-
-
-
 
     }
 
@@ -101,9 +97,18 @@ public class UserImplements implements UserRepository {
         session.getTransaction().commit();
         session.close();
 
-
     }
 
+    @Override
+    public User findByName(String name) {
+        Session session = sessionFactory.openSession();
+        Query query=session.createQuery("select s from User s where s.name in(:name)");
+        query.setParameter("name", name);
+        List<User> users=query.getResultList();
+        User user=users.get(0);
+        session.close();
+        return user;
+    }
 
 
 }
